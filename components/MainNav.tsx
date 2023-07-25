@@ -13,7 +13,7 @@ const MainNav = ({data}:MainNavProps) => {
     const routes = data.map((route)=> ({
         href: `/category/${route.id}`,
         label: route.name,
-        active: pathname === `category/${route.id}`
+        active: pathname === `/category/${route.id}`
     })) 
   return (
     <div
@@ -25,7 +25,7 @@ const MainNav = ({data}:MainNavProps) => {
                     href={route.href}
                     key={route.href}
                     className={cn("text-sm font-medium transition hover:text-black", 
-                    route.active ? "text-black" : "text-neutral-500") }
+                    route.active ? "text-black font-semibold text-[16px]" : "text-neutral-500") }
                 >
                     {route.label}
                 </Link>
